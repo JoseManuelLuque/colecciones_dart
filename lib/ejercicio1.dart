@@ -13,7 +13,7 @@ import 'dart:io';
 
 void ejercicio1() {
 //Definimos la lista de los género con uno por defecto
-  var generosFavoritos = <String?>["Pop"];
+  Set<String> generosFavoritos = {"Pop"};
 
   
   while(true){
@@ -39,11 +39,13 @@ void ejercicio1() {
 
 
 String? menu() {
-print("\nMenú:");
+print("Menú:");
     print("1. Añadir un género");
     print("2. Mostrar lista de géneros");
     print("3. Salir");
+
     stdout.write("Elige una opción: ");
+    
     String? opcion = stdin.readLineSync();
     return opcion;
 
@@ -51,17 +53,24 @@ print("\nMenú:");
 
 void addGenero(generosFavoritos) {
   if (generosFavoritos.length >= 5) {
+
     print("No puedes añadir más de 5 géneros a tu lista de favoritos.");
     return;
+
   }
 
   print("Desea añadir un genero a su lista de favoritos");
   String? genero = stdin.readLineSync();
+
   if (genero != null && genero.isNotEmpty) {
+
     print("Genero: $genero añadido correctamente!");
     generosFavoritos.add(genero);
+
   } else {
+
     print("No ingresaste ningún genro.");
+
   }
 }
 
@@ -69,11 +78,17 @@ void addGenero(generosFavoritos) {
 
 void imprimirLista(generosFavoritos) {
   if (generosFavoritos.isEmpty) {
+
     print("Tu lista de géneros favoritos está vacía.");
+
   } else {
+
     print("Lista de géneros favoritos:");
+
     for (var genero in generosFavoritos) {
+
       print("- $genero");
+
     }
   }
 }
