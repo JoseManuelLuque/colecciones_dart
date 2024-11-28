@@ -1,5 +1,5 @@
-import 'package:colecciones_dart/colecciones_dart.dart' as colecciones_dart;
+import 'package:colecciones_dart/Ejercicio1.dart';
 
 void main(List<String> arguments) {
-  print('Hello world: ${colecciones_dart.calculate()}!');
+  ejercicio1();
 }
